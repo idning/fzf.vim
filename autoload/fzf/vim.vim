@@ -384,6 +384,13 @@ function! fzf#vim#history(...)
   \}), a:000)
 endfunction
 
+function! fzf#vim#history(...)
+  return s:fzf(fzf#vim#wrap({
+  \ 'source':  ctrlp#mrufiles#list('raw'),
+  \ 'options': '-m --prompt "CtrlPHist> "'
+  \}), a:000)
+endfunction
+
 " ------------------------------------------------------------------
 " GitFiles[?]
 " ------------------------------------------------------------------
