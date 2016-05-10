@@ -385,8 +385,14 @@ function! fzf#vim#history(...)
 endfunction
 
 function! fzf#vim#history(...)
+  if bufname('%') == '' 
+      let lst=ctrlp#mrufiles#list('raw')
+  else
+      let lst=ctrlp#mrufiles#list('raw')[1:]
+  endif
+
   return s:fzf(fzf#vim#wrap({
-  \ 'source':  ctrlp#mrufiles#list('raw')[1:],
+  \ 'source':  lst,
   \ 'options': '-m --prompt "CtrlPHist> "'
   \}), a:000)
 endfunction
