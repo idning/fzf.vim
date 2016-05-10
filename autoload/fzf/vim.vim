@@ -386,7 +386,7 @@ endfunction
 
 function! fzf#vim#history(...)
   return s:fzf(fzf#vim#wrap({
-  \ 'source':  ctrlp#mrufiles#list('raw'),
+  \ 'source':  ctrlp#mrufiles#list('raw')[1:],
   \ 'options': '-m --prompt "CtrlPHist> "'
   \}), a:000)
 endfunction
