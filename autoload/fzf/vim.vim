@@ -393,7 +393,7 @@ function! fzf#vim#history(...)
 
   return s:fzf(fzf#vim#wrap({
   \ 'source':  lst,
-  \ 'options': '-m --prompt "CtrlPHist> "'
+  \ 'options': '-m --no-sort --prompt "CtrlPHist> "'
   \}), a:000)
 endfunction
 
