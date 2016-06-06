@@ -657,7 +657,7 @@ function! fzf#vim#tags(query, ...)
   let tagfile = tagfiles()[0]
   " We don't want to apply --ansi option when tags file is large as it makes
   " processing much slower.
-  if getfsize(tagfile) > 1024 * 1024 * 20
+  if getfsize(tagfile) > 1024 * 1024 * 1024
     let proc = 'grep -v ''^\!'' '
     let copt = ''
   else
